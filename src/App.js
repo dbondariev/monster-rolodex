@@ -2,14 +2,15 @@ import { Component } from 'react';
 
 import logo from './logo.svg';
 import './App.css';
-import { name } from 'tar/lib/types';
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super();
+
     this.state = {
       name: 'User'
     }
+
   }
   render() {
     return (
@@ -19,7 +20,9 @@ class App extends Component {
           <p>
             Hi {this.state.name}, I am a React App
           </p>
-          <button>
+          <button onClick={() => {
+            this.setState({ name: 'Dima' })
+          }}>
             Change Name
           </button>
         </header>
