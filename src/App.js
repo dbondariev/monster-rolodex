@@ -8,7 +8,8 @@ class App extends Component {
     super();
 
     this.state = {
-      name: 'User'
+      name: { firstName: 'James', lastName: 'Bond' },
+      occupation: 'Speacial Agent'
     }
 
   }
@@ -18,10 +19,10 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hi {this.state.name}, I am a React App
+            Hi my name is {this.state.name.firstName} {this.state.name.lastName}, I am a {this.state.occupation}
           </p>
           <button onClick={() => {
-            this.setState({ name: 'Dima' })
+            this.setState({ name: { firstName: 'Dima', lastName: 'Bondariev' }, occupation: 'Frontend Developer' })
           }}>
             Change Name
           </button>
