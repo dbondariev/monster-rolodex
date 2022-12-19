@@ -8,35 +8,25 @@ class App extends Component {
     super();
 
     this.state = {
-      name: { firstName: 'James', lastName: 'Bond' },
-      occupation: 'Speacial Agent'
+      monsters: [
+        {
+          name: 'Linda'
+        },
+        {
+          name: 'Frank'
+        },
+        {
+          name: 'Jacky'
+        }
+      ]
     }
-
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi my name is {this.state.name.firstName} {this.state.name.lastName}, I am a {this.state.occupation}
-          </p>
-          <button onClick={() => {
-            this.setState(
-              () => {
-                return {
-                  name: { firstName: 'Dima', lastName: 'Bondariev' },
-                  occupation: 'Frontend Developer'
-                };
-              },
-              () => {
-                console.log(this.state);
-              }
-            );
-          }}>
-            Change Name
-          </button>
-        </header>
+        {
+          this.state.monsters.map(monster => <h1 key={monster.name}>{monster.name}</h1>)
+        }
       </div>
     );
   }
