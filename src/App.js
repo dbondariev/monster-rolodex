@@ -19,9 +19,6 @@ class App extends Component {
           () => {
             return { monsters: users };
           },
-          () => {
-            console.log(this.state.monsters);
-          }
         )
       );
   }
